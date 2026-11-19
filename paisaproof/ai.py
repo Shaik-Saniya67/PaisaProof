@@ -24,7 +24,7 @@ def _groq(system, user, js=False, task="AI request"):
     _ACTIVITY["last_task"] = task
     _ACTIVITY["last_error"] = None
     try:
-        body = {"model": os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"), "temperature": 0.1, "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
+        body = {"model": os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"), "temperature": 0.1, "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
         if js: body["response_format"] = {"type": "json_object"}
         r = requests.post("https://api.groq.com/openai/v1/chat/completions", headers={"Authorization": f"Bearer {k}"}, json=body, timeout=45)
         r.raise_for_status()
