@@ -129,7 +129,7 @@ with st.sidebar:
             st.warning(f"Last AI call failed ({ai_state['last_error']}). Check the key, model and network.")
         else:
             st.caption("No AI call yet. Rule-based extraction may not have needed the AI fallback.")
-        st.caption(f"Model: `{ai_state['model']}` · Successful calls this session: {ai_state['successes']}")
+        st.caption(f"Model: {ai_state['model']} · Successful calls this session: {ai_state['successes']}")
     else:
         st.markdown("⚪ **Groq key not configured**")
         st.caption("Rule-based processing still works. Add GROQ_API_KEY to enable optional AI assistance.")
