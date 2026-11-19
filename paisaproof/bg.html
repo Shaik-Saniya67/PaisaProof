@@ -24,7 +24,7 @@ let hostDoc = null
 try { hostDoc = host.document } catch (e) { hostDoc = null }
 if (hostDoc && window.frameElement) {
   const fe = window.frameElement
-  fe.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;border:0;z-index:0;pointer-events:none;background:transparent;opacity:0.22;transition:opacity 1.2s ease;will-change:opacity'
+  fe.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;border:0;z-index:0;pointer-events:none;background:transparent;opacity:0.10;transition:opacity 1.2s ease;will-change:opacity'
   const wrap = fe.closest('[data-testid="stElementContainer"]') || fe.closest('[data-testid="element-container"]') || fe.parentElement
   if (wrap) wrap.style.cssText = 'position:absolute;height:0;width:0;margin:0;padding:0;overflow:visible;animation:none;'
 }
@@ -33,9 +33,9 @@ const evtWin = hostDoc ? host : window
 
 const LAYERS = { NONE: 0, TORUS_SCENE: 1, BLOOM_SCENE: 2, ENTIRE_SCENE: 3 }
 
-const bgColor = '#02160c', flameColor = '#0aff7f', flameColor2 = '#aef0c0', flameAmt = 0.2
-const atmoColor = '#7affbf', atmoCount = 300, atmoSize = 24, atmoSpeed = 1.0
-const colorLow = '#02160c', colorHigh = '#34e89a', opacity = 0.26, pointSize = 5.5, brightness = 0.45
+const bgColor = '#02160c', flameColor = '#0aff7f', flameColor2 = '#aef0c0', flameAmt = 0.08
+const atmoColor = '#4c9b75', atmoCount = 220, atmoSize = 18, atmoSpeed = 1.0
+const colorLow = '#02160c', colorHigh = '#34e89a', opacity = 0.16, pointSize = 5.5, brightness = 0.32
 const waveHeight = 3, flow = 1, tilt = 0, scale = 0.275, scrollRise = 1.0
 const camStartY = 7, camStartZ = 16, camEndY = 0.8, camEndZ = -2
 const lookStartZ = 2, lookEndZ = -16
